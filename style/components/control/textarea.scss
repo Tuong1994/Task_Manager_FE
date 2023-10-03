@@ -1,0 +1,111 @@
+.textarea {
+  width: $w-full;
+  .textarea-label {
+    display: block;
+    margin-bottom: calc($m-1 - 0.2rem);
+  }
+  .textarea-group {
+    width: $w-full;
+    display: flex;
+    border: 0.5px solid $bg-gray-light;
+    border-radius: $rounded;
+    background: $bg-white;
+    position: relative;
+    transition: all $transition-duration-md $transition-fn;
+    &:hover,
+    &:focus-within {
+      border-color: $bg-primary;
+    }
+    .group-control {
+      width: $w-full;
+      padding: 0 calc($p-1 - 0.2rem);
+      border: unset;
+    }
+    .group-prefix,
+    .group-suffix {
+      padding: 0 calc($p-1 - 0.2rem);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      &::after {
+        content: "";
+        width: 1px;
+        height: 90%;
+        background: $bg-gray-light;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .group-prefix {
+      &::after {
+        right: 0;
+      }
+    }
+    .group-suffix {
+      &::after {
+        left: 0;
+      }
+    }
+    .group-clear-action {
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+      z-index: 1;
+      & * {
+        color: $text-gray-medium;
+        cursor: pointer;
+      }
+    }
+  }
+  .textarea-group-error {
+    border-color: $bg-red;
+  }
+  .textarea-group-disabled {
+    opacity: 0.8;
+    background: $bg-gray-light;
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+.textarea-gap {
+  margin-bottom: calc($m-2 - 0.5rem);
+}
+
+.textarea-sm {
+  .textarea-label {
+    font-size: $text-xs;
+  }
+  .textarea-group {
+    padding: calc($p-1 - 0.6rem) 0;
+    .group-control {
+      font-size: $text-xs;
+      &::placeholder {
+        font-size: $text-xs;
+      }
+    }
+  }
+}
+
+.textarea-md {
+  .textarea-group {
+    padding: calc($p-1 - 0.4rem) 0;
+  }
+}
+
+.textarea-lg {
+  .textarea-label {
+    font-size: $text-md;
+  }
+  .textarea-group {
+    padding: calc($p-1 - 0.2rem) 0;
+    .group-control {
+      font-size: $text-md;
+      &::placeholder {
+        font-size: $text-md;
+      }
+    }
+  }
+}

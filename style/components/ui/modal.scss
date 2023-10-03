@@ -1,0 +1,99 @@
+.modal-backdrop {
+  width: $w-full;
+  height: $h-screen;
+  background: $bg-black-rgba;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  opacity: 0;
+  transition: opacity $transition-duration-md $transition-fn;
+}
+
+.modal-backdrop-active {
+  opacity: 1;
+  animation: fade 0.3s linear;
+}
+
+.modal {
+  border-radius: $rounded;
+  background: $bg-white;
+  overflow: hidden;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  z-index: 10;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all $transition-duration-lg $transition-fn;
+  .modal-header,
+  .modal-body,
+  .modal-footer {
+    padding: calc($p-2 - 0.5rem);
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: $bg-primary;
+    color: $text-white;
+    & * {
+      color: $text-white;
+    }
+    .header-icon {
+      cursor: pointer;
+    }
+  }
+  .modal-body {
+    max-height: calc($h-screen - 15rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  .modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 0.5px solid $bg-gray-light;
+    button {
+      &:nth-child(1) {
+        margin-right: $m-1;
+      }
+    }
+  }
+}
+
+.modal-sm {
+  width: calc($w-1 * 35);
+  @include respond(smPhone) {
+    width: calc($w-1 * 31);
+  }
+}
+
+.modal-md {
+  width: calc($w-1 * 50);
+  @include respond(mdPhone) {
+    width: calc($w-1 * 40);
+  }
+  @include respond(mdPhone) {
+    width: calc($w-1 * 31);
+  }
+}
+
+.modal-lg {
+  width: calc($w-1 * 70);
+  @include respond(smTablet) {
+    width: calc($w-1 * 60);
+  }
+  @include respond(mdPhone) {
+    width: calc($w-1 * 40);
+  }
+  @include respond(mdPhone) {
+    width: calc($w-1 * 31);
+  }
+}
+
+.modal-active {
+  top: 50%;
+  opacity: 1;
+  animation: fadeTopIn 0.5s ease;
+}

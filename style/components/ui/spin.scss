@@ -1,0 +1,15 @@
+.spin {
+  animation: spin 1s linear infinite;
+  .spin-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .item-dot {
+      width: calc($w-1 - 0.2rem);
+      height: calc($h-1 - 0.2rem);
+      margin: calc($m-1 - 0.9rem);
+      border-radius: $rounded-full;
+      background: $bg-gray-medium;
+    }
+  }
+}

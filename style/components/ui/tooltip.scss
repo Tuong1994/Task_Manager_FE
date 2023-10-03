@@ -1,0 +1,95 @@
+.tooltip {
+  width: max-content;
+  position: relative;
+  .tooltip-child {
+    width: max-content;
+    cursor: pointer;
+    position: relative;
+    &::after {
+      content: "";
+      width: 0;
+      height: 0;
+      border: 8px solid transparent;
+      position: absolute;
+      z-index: 1;
+    }
+  }
+  .tooltip-content {
+    width: calc($w-1 * 20);
+    max-width: calc($w-1 * 30);
+    padding: calc($p-1 - 0.2rem);
+    border-radius: $rounded;
+    background: $bg-black;
+    color: $text-white;
+    position: absolute;
+    z-index: 5;
+
+    & * {
+      color: $text-white;
+    }
+  }
+}
+
+.tooltip-top {
+  .tooltip-child {
+    &::after {
+      border-top-color: $bg-black;
+      bottom: calc(100% - 8px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .tooltip-content {
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.tooltip-left {
+  .tooltip-child {
+    &::after {
+      border-left-color: $bg-black;
+      top: 50%;
+      left: -8px;
+      transform: translateY(-50%);
+    }
+  }
+  .tooltip-content {
+    top: 50%;
+    left: -100%;
+    transform: translateY(-50%);
+  }
+}
+
+.tooltip-right {
+  .tooltip-child {
+    &::after {
+      border-bottom-color: $bg-black;
+      top: calc(100% - 8px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .tooltip-content {
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+.tooltip-bottom {
+  .tooltip-child {
+    &::after {
+      border-bottom-color: $bg-black;
+      top: calc(100% - 8px);
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  .tooltip-content {
+    top: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

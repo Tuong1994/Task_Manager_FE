@@ -1,0 +1,28 @@
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeTopIn {
+  from {
+    opacity: 0;
+    top: 30%;
+  }
+  to {
+    opacity: 1;
+    top: 50%;
+  }
+}

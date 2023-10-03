@@ -1,0 +1,116 @@
+.input {
+  width: $w-full;
+  .input-label {
+    display: block;
+    margin-bottom: calc($m-1 - 0.2rem);
+  }
+  .input-group {
+    width: $w-full;
+    display: flex;
+    border: 0.5px solid $bg-gray-light;
+    border-radius: $rounded;
+    background: $bg-white;
+    position: relative;
+    transition: all $transition-duration-md $transition-fn;
+    &:hover,
+    &:focus-within {
+      border-color: $bg-primary;
+    }
+    .group-control {
+      width: $w-full;
+      display: flex;
+      align-items: center;
+      .control-input {
+        width: $w-full;
+        padding: 0 calc($p-1 - 0.2rem);
+        border: unset;
+      }
+      .control-clear-action {
+        padding: 0 calc($p-1 - 0.6rem);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & * {
+          color: $text-gray-medium;
+          cursor: pointer;
+        }
+      }
+    }
+    .group-prefix,
+    .group-suffix {
+      padding: 0 calc($p-1 - 0.2rem);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      &::after {
+        content: "";
+        width: 1px;
+        height: 90%;
+        background: $bg-gray-light;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+    .group-prefix {
+      &::after {
+        right: 0;
+      }
+    }
+    .group-suffix {
+      &::after {
+        left: 0;
+      }
+    }
+  }
+  .input-group-error {
+    border-color: $bg-red;
+  }
+  .input-group-disabled {
+    opacity: 0.8;
+    background: $bg-gray-light;
+    user-select: none;
+    pointer-events: none;
+  }
+}
+
+.input-gap {
+  margin-bottom: calc($m-2 - 0.5rem);
+}
+
+.input-sm {
+  .input-label {
+    font-size: $text-xs;
+  }
+  .input-group {
+    padding: calc($p-1 - 0.6rem) 0;
+    .group-control {
+      font-size: $text-xs;
+      &::placeholder {
+        font-size: $text-xs;
+      }
+    }
+  }
+}
+
+.input-md {
+  .input-group {
+    padding: calc($p-1 - 0.4rem) 0;
+  }
+}
+
+.input-lg {
+  .input-label {
+    font-size: $text-md;
+  }
+  .input-group {
+    padding: calc($p-1 - 0.2rem) 0;
+    .group-control {
+      font-size: $text-md;
+      &::placeholder {
+        font-size: $text-md;
+      }
+    }
+  }
+}

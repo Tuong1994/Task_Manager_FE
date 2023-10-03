@@ -1,0 +1,9 @@
+.note-message {
+  margin: $m-1 0;
+}
+
+.note-message-error {
+  p {
+    color: $text-red;
+  }
+}

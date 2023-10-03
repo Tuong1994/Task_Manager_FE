@@ -1,0 +1,7 @@
+section {
+  padding: $p-5;
+  width: $w-full;
+  @include respond(mdPhone) {
+    padding: $p-2;
+  }
+}

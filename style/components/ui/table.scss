@@ -1,0 +1,97 @@
+.table-wrap {
+  max-width: $w-full;
+  .wrap-actions {
+    padding: $p-1;
+    border: 0.5px solid $bg-gray-light;
+    background: $bg-primary-rgba;
+    border-top-left-radius: $rounded;
+    border-top-right-radius: $rounded;
+  }
+  .wrap-content {
+    max-width: $w-full;
+    border: 0.5px solid $bg-gray-light;
+    border-bottom-left-radius: $rounded;
+    border-bottom-right-radius: $rounded;
+    overflow-x: auto;
+    table {
+      width: $w-full;
+      border-collapse: collapse;
+      thead {
+        th {
+          padding: calc($p-1 - 0.2rem) $p-1;
+          color: $text-white;
+          font-weight: $font-medium;
+        }
+      }
+      tbody {
+        tr {
+          background: $bg-white;
+          border-bottom: 1px solid $bg-gray-light;
+          transition: background $transition-duration-md $transition-fn;
+          &:last-child {
+            border-bottom: unset;
+          }
+          &:hover {
+            background: $bg-primary-rgba;
+          }
+          td {
+            padding: calc($p-2 - 0.5rem);
+          }
+        }
+      }
+      .content-head {
+        background: $bg-primary;
+        &:hover {
+          background: $bg-primary;
+        }
+      }
+      .content-line {
+        width: $w-full;
+        height: $h-full;
+        background: $bg-gray-light;
+      }
+      .content-cell {
+        min-width: max-content;
+        width: $w-full;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        .cell-checkbox {
+          width: calc($w-1 + 0.5rem);
+          height: calc($h-1 + 0.5rem);
+          border: 0.5px solid $bg-gray-light;
+          accent-color: $bg-white;
+          position: relative;
+        }
+        .cell-checkbox-mixed {
+          background: $bg-white;
+          border-color: $bg-white;
+          border-radius: $rounded-sm;
+          &::after {
+            content: "";
+            width: calc($w-1 - 0.3rem);
+            height: 1px;
+            background: $bg-black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+        }
+        .cell-expand-icon {
+          font-size: $text-xs;
+          cursor: pointer;
+        }
+      }
+      .content-selected {
+        background: $bg-primary-rgba;
+      }
+    }
+  }
+  .wrap-content-radius {
+    border-radius: $rounded;
+  }
+  .wrap-content-expand {
+    border-radius: $rounded;
+  }
+}

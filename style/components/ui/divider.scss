@@ -1,0 +1,25 @@
+.divider {
+  margin: $m-2 0;
+  width: $w-full;
+  height: 1px;
+  background: $bg-gray-light;
+  position: relative;
+  .divider-content {
+    padding: calc($p-1 - 0.5rem);
+    background: $bg-white;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    transform: translateY(-50%);
+  }
+  .divider-content-left {
+    left: 10px;
+  }
+  .divider-content-center {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .divider-content-right {
+    right: 10px;
+  }
+}

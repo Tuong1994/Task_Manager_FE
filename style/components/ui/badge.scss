@@ -1,0 +1,83 @@
+.badge {
+  padding: calc($p-1 - 0.5rem) calc($p-1 - 0.2rem);
+  border: 0.5px solid transparent;
+  border-radius: $rounded-lg;
+  background: $bg-gray-light;
+  font-size: $text-xs;
+  & * {
+    font-size: $text-xs;
+  }
+}
+
+.badge-ghost {
+  background: transparent;
+  border-color: $bg-gray-light;
+}
+
+.badge-primary {
+  background: $bg-primary;
+  color: $text-white;
+  & * {
+    color: $text-white;
+  }
+}
+
+.badge-success {
+  background: $bg-green;
+  color: $text-white;
+  & * {
+    color: $text-white;
+  }
+}
+
+.badge-warning {
+  background: $bg-orange;
+  color: $text-white;
+  & * {
+    color: $text-white;
+  }
+}
+
+.badge-danger {
+  background: $bg-red;
+  color: $text-white;
+  & * {
+    color: $text-white;
+  }
+}
+
+.badge-ghost-primary {
+  background: $bg-primary-rgba;
+  border-color: $bg-primary;
+  color: $text-primary;
+  & * {
+    color: $text-primary;
+  }
+}
+
+.badge-ghost-success {
+  background: $bg-green-rgba;
+  border-color: $bg-green;
+  color: $text-green;
+  & * {
+    color: $text-green;
+  }
+}
+
+.badge-ghost-warning {
+  background: $bg-orange-rgba;
+  border-color: $bg-orange;
+  color: $text-orange;
+  & * {
+    color: $text-orange;
+  }
+}
+
+.badge-ghost-danger {
+  background: $bg-red-rgba;
+  border-color: $bg-red;
+  color: $text-red;
+  & * {
+    color: $text-red;
+  }
+}

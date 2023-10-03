@@ -1,0 +1,59 @@
+.switch {
+  appearance: none;
+  background: $bg-white;
+  border-radius: $rounded-xl;
+  box-shadow: inset 0 0 10px $bg-gray-medium;
+  position: relative;
+  cursor: pointer;
+  transition: background $transition-duration-md $transition-fn;
+  &::after {
+    content: "";
+    border-radius: $rounded-full;
+    background: $bg-white;
+    box-shadow: 0 0 10px $bg-gray-medium;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: left $transition-duration-md $transition-fn;
+  }
+  &:checked {
+    background: $bg-primary;
+  }
+}
+
+.switch-sm {
+  width: calc($w-1 * 3.5);
+  height: calc($h-1 * 1.5);
+  &::after {
+    width: calc($w-1 + 0.5rem);
+    height: calc($h-1 + 0.5rem);
+  }
+  &:checked::after {
+    left: calc($w-1 + 1rem);
+  }
+}
+
+.switch-md {
+  width: calc($w-1 * 4);
+  height: calc($h-1 * 2);
+  &::after {
+    width: calc($w-1 + 1rem);
+    height: calc($h-1 + 1rem);
+  }
+  &:checked::after {
+    left: calc($w-1 + 1rem);
+  }
+}
+
+.switch-lg {
+  width: calc($w-1 * 5);
+  height: calc($h-1 * 2.5);
+  &::after {
+    width: calc($w-1 + 1.5rem);
+    height: calc($h-1 + 1.5rem);
+  }
+  &:checked::after {
+    left: calc($w-1 + 1.5rem);
+  }
+}

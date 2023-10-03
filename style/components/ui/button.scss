@@ -1,0 +1,173 @@
+.button {
+  border: 1px solid $bg-gray-medium;
+  border-radius: $rounded;
+  background: $bg-white;
+  transition: opacity $transition-duration-md $transition-fn;
+  display: flex;
+  align-items: center;
+  position: relative;
+  &:hover::before {
+    opacity: 0.3;
+  }
+  &:active {
+    opacity: 1;
+  }
+  &:active::after {
+    width: calc($w-full + $w-1);
+    height: calc($h-full + $h-1);
+  }
+  &:disabled {
+    background: $bg-gray-light;
+    border-color: $bg-gray-light;
+    color: $text-gray-medium;
+    user-select: none;
+    cursor: not-allowed;
+    &::before,
+    &::after {
+      content: unset
+    }
+  }
+  &::after,
+  &::before {
+    border-radius: $rounded;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  &::before {
+    content: "";
+    width: calc($w-full + 1px);
+    height: calc($h-full + 1px);
+    background: $bg-white;
+    z-index: 1;
+    opacity: 0;
+    transition: all $transition-duration-sm $transition-fn;
+  }
+  &::after {
+    content: "";
+    width: $w-full;
+    height: $h-full;
+    background: $bg-gray-medium;
+    z-index: -1;
+    opacity: 0.4;
+    transition: all $transition-duration-sm $transition-fn;
+  }
+}
+
+.button-icon {
+  margin-right: calc($m-1 - 0.5rem);
+  animation: spin 1s ease-in-out infinite;
+  path {
+    color: $text-gray-medium;
+  }
+}
+
+.button-variant {
+  color: $text-white;
+  path,
+  & * {
+    color: $text-white;
+  }
+}
+
+.button-ghost {
+  background: $bg-white;
+}
+
+// Size
+.button-sm {
+  padding: $p-1 / 2;
+  font-size: $text-xs;
+}
+
+.button-md {
+  padding: $p-1 - 0.4rem $p-1;
+}
+
+.button-lg {
+  padding: $p-1 - 0.2rem $p-1;
+  font-size: $text-md;
+}
+
+// Variant
+.button-primary {
+  border-color: $bg-primary;
+  background: $bg-primary;
+  &::after {
+    background: $bg-primary;
+  }
+}
+
+.button-success {
+  border-color: $bg-green;
+  background: $bg-green;
+  &::after {
+    background: $bg-green;
+  }
+}
+
+.button-warning {
+  border-color: $bg-orange;
+  background: $bg-orange;
+  &::after {
+    background: $bg-orange;
+  }
+}
+
+.button-danger {
+  border-color: $bg-red;
+  background: $bg-red;
+  &::after {
+    background: $bg-red;
+  }
+}
+
+// Ghost
+.button-ghost-primary {
+  border-color: $bg-primary;
+  color: $text-primary;
+  path,
+  & * {
+    color: $text-primary;
+  }
+  &::after {
+    background: $bg-primary;
+  }
+}
+
+.button-ghost-success {
+  border-color: $bg-green;
+  color: $text-green;
+  path,
+  & * {
+    color: $text-green;
+  }
+  &::after {
+    background: $bg-green;
+  }
+}
+
+.button-ghost-warning {
+  border-color: $bg-orange;
+  color: $text-orange;
+  path,
+  & * {
+    color: $text-orange;
+  }
+  &::after {
+    background: $bg-orange;
+  }
+}
+
+.button-ghost-danger {
+  border-color: $bg-red;
+  color: $text-red;
+  path,
+  & * {
+    color: $text-red;
+  }
+  &::after {
+    background: $bg-red;
+  }
+}
