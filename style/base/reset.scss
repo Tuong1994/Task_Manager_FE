@@ -13,7 +13,7 @@
     height: 8px;
   }
   &::-webkit-scrollbar-thumb {
-    background: $bg-gray-light;
+    background: $bg-primary;
   }
   &::-webkit-scrollbar-track {
     background: $bg-white;
@@ -25,6 +25,8 @@ html {
 }
 
 a {
+  width: $w-full;
+  display: block;
   text-decoration: none;
 }
 

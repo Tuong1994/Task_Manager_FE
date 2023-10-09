@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { SelectOption } from "@/common/interface/form";
+import { SelectOption } from "@/common/type/form";
 import { useFormContext } from "react-hook-form";
 import SelectControl from "./Control";
 import SelectOptions from "./Options";

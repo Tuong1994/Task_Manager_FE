@@ -6,6 +6,7 @@ import { FaTimes } from "react-icons/fa";
 import Button, { ButtonProps } from "../Button";
 import useRender from "@/hooks/useRender";
 import useOverflow from "@/hooks/useOverflow";
+import Portal from "./Portal";
 
 interface ModalAction extends ButtonProps {
   title?: string;
@@ -64,7 +65,7 @@ const Modal: React.ForwardRefRenderFunction<HTMLDivElement, ModalProps> = (
   const sizeClassName = () => `modal-${size}`;
 
   return render ? (
-    <React.Fragment>
+    <Portal>
       <div className={`modal-backdrop ${backdropActiveClassName()}`} onClick={onCancel} />
 
       <div
@@ -90,7 +91,7 @@ const Modal: React.ForwardRefRenderFunction<HTMLDivElement, ModalProps> = (
           </Button>
         </div>
       </div>
-    </React.Fragment>
+    </Portal>
   ) : null;
 };
 

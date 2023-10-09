@@ -3,7 +3,7 @@
 import React from "react";
 import { useAppDispatch } from "@/redux/hooks";
 import { switchLang } from "@/redux/slice/langSlice";
-import { ELang } from "@/common/interface/lang";
+import { ELang } from "@/common/type/lang";
 import useLangs from "@/hooks/useLangs";
 
 interface TranslateProps {}

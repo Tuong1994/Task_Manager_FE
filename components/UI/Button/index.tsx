@@ -2,6 +2,7 @@
 
 import React from "react";
 import { FaSpinner } from "react-icons/fa";
+import useTheme from "@/hooks/useTheme";
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   rootClassName?: string;
@@ -16,6 +17,8 @@ const Button: React.ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
   { rootClassName = "", size = "md", variant, loading, ghost, children, ...restProps },
   ref
 ) => {
+  const themeClassName = useTheme("button");
+
   const variantClassName = () => {
     if (!variant) return "";
 
@@ -29,7 +32,7 @@ const Button: React.ForwardRefRenderFunction<HTMLButtonElement, ButtonProps> = (
   return (
     <button
       ref={ref}
-      className={`button ${sizeClassName()} ${variantClassName()} ${rootClassName}`}
+      className={`button ${themeClassName} ${sizeClassName()} ${variantClassName()} ${rootClassName}`}
       {...restProps}
     >
       {loading && <FaSpinner className="button-icon" />}

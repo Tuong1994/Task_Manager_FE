@@ -1,16 +1,25 @@
 $bg-primary: #34d399;
+$bg-emerald: #10b981;
 $bg-white: #fff;
 $bg-black: #000;
-$bg-green: #65a30d;
+$bg-blue: #38bdf8;
+$bg-green: #84cc16;
 $bg-red: #ef4444;
 $bg-orange: #fb923c;
+$bg-pink: #ec4899;
+$bg-violet: #a78bfa;
+$bg-yellow: #fbbf24;
 $bg-gray-light: #d1d5db;
 $bg-gray-medium: #9ca3af;
 
 $bg-primary-rgba: rgba(52, 211, 153, 0.2);
-$bg-green-rgba: rgba(101, 163, 13, 0.2);
+$bg-blue-rgba: rgba(56, 189, 248, 0.2);
+$bg-green-rgba: rgba(132, 204, 22, 0.2);
 $bg-orange-rgba: rgba(251, 146, 60, 0.2);
 $bg-red-rgba: rgba(239, 68, 68, 0.2);
+$bg-pink-rgba: rgba(236, 72, 153, 0.2);
+$bg-violet-rgba: rgba(167, 139, 250, 0.2);
+$bg-yellow-rgba: rgba(251, 191, 36, 0.2);
 $bg-black-rgba: rgba(0, 0, 0, 0.6);
 
 $text-primary: #34d399;
@@ -18,9 +27,13 @@ $text-black: #222;
 $text-white: #fff;
 $text-gray-light: #d1d5db;
 $text-gray-medium: #9ca3af;
-$text-green: #65a30d;
-$text-red: #ef4444;
+$text-blue: #38bdf8;
+$text-green: #84cc16;
 $text-orange: #fb923c;
+$text-red: #ef4444;
+$text-pink: #ec4899;
+$text-violet: #a78bfa;
+$text-yellow: #fbbf24;
 
 $text-xxl: 3.2rem;
 $text-3xl: 2.8rem;
@@ -30,6 +43,7 @@ $text-lg: 1.8rem;
 $text-md: 1.6rem;
 $text-sm: 1.4rem;
 $text-xs: 1.2rem;
+$text-2xs: 1.1rem;
 
 $font-thin: 400;
 $font-medium: 600;

@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectDate } from "@/common/interface/form";
+import { SelectDate } from "@/common/type/form";
 import CalendarHeader from "./CalendarHeader";
 import CalendarDays from "./CalendarDays";
 import CalendarDates from "./CalendarDates";

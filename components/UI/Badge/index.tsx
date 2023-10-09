@@ -1,27 +1,34 @@
 import React from "react";
+import useTheme from "@/hooks/useTheme";
 
 interface BadgeProps {
   rootClassName?: string;
   style?: React.CSSProperties;
   children?: React.ReactNode | React.ReactNode[];
-  variant?: "primary" | "success" | "warning" | "danger";
+  color?: "emerald" | "blue" | "green" | "orange" | "red" | "yellow" | "violet" | "pink";
   ghost?: boolean;
 }
 
 const Badge: React.ForwardRefRenderFunction<HTMLDivElement, BadgeProps> = (
-  { rootClassName = "", style, children, variant, ghost },
+  { rootClassName = "", style, children, color, ghost },
   ref
 ) => {
-  const variantClassName = () => {
-    if (!variant) return "";
+  const themeClassName = useTheme("badge");
 
-    if (ghost) return `badge-ghost badge-ghost-${variant}`;
+  const colorClassName = () => {
+    if (!color) return "";
 
-    return `badge-${variant}`;
+    if (ghost) return `badge-ghost badge-ghost-${color}`;
+
+    return `badge-${color}`;
   };
 
   return (
-    <div ref={ref} style={style} className={`badge ${variantClassName()} ${rootClassName}`}>
+    <div
+      ref={ref}
+      style={style}
+      className={`badge ${themeClassName} ${colorClassName()} ${rootClassName}`}
+    >
       {children}
     </div>
   );

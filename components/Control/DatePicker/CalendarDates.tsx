@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectDate } from "@/common/interface/form";
+import { SelectDate } from "@/common/type/form";
 import CalendarDateItem from "./CalendarDateItem";
 
 interface CalendarDatesProps {

@@ -1,4 +1,5 @@
 import React from "react";
+import useTheme from "@/hooks/useTheme";
 
 export interface CardProps {
   rootClassName?: string;
@@ -10,6 +11,7 @@ export interface CardProps {
   header?: React.ReactNode | React.ReactNode[];
   children?: React.ReactNode | React.ReactNode[];
   hoverable?: boolean;
+  bordered?: boolean;
 }
 
 const Card: React.ForwardRefRenderFunction<HTMLDivElement, CardProps> = (
@@ -23,16 +25,28 @@ const Card: React.ForwardRefRenderFunction<HTMLDivElement, CardProps> = (
     header,
     children,
     hoverable,
+    bordered = true,
   },
   ref
 ) => {
-  const hoverClassName = () => (hoverable ? "card-hoverable" : "");
+  const themeClassName = useTheme("card");
+
+  const hoverClassName = hoverable ? "card-hoverable" : "";
+
+  const borderClassName = bordered ? "card-border" : "";
 
   return (
-    <div ref={ref} style={style} className={`card ${hoverClassName()} ${rootClassName}`}>
-      <div style={headerStyle} className={`card-header ${headerClassName}`}>
-        {header}
-      </div>
+    <div
+      ref={ref}
+      style={style}
+      className={`card ${themeClassName} ${borderClassName} ${hoverClassName} ${rootClassName}`}
+    >
+      {header && (
+        <div style={headerStyle} className={`card-header ${headerClassName}`}>
+          {header}
+        </div>
+      )}
+
       <div style={bodyStyle} className={`card-body ${bodyClassName}`}>
         {children}
       </div>

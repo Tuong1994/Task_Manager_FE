@@ -4,7 +4,7 @@ import React from "react";
 import { Controller, useController, useFormContext } from "react-hook-form";
 import { ErrorMessage } from "@hookform/error-message";
 import { EMAIL_REGEX, PHONE_REGEX } from "@/common/constant/regex";
-import { FieldError, FormRule } from "@/common/interface/form";
+import { FieldError, FormRule } from "@/common/type/form";
 import FormItemContext, { FormItemContextState } from "./Context";
 import NoteMessage from "@/components/UI/NoteMessage";
 

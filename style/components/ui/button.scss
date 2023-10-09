@@ -24,7 +24,7 @@
     cursor: not-allowed;
     &::before,
     &::after {
-      content: unset
+      content: unset;
     }
   }
   &::after,
@@ -73,6 +73,10 @@
 
 .button-ghost {
   background: $bg-white;
+}
+
+.button-dark.button-ghost {
+  background: $bg-black;
 }
 
 // Size
@@ -124,48 +128,52 @@
 }
 
 // Ghost
-.button-ghost-primary {
+.button-ghost-primary,
+.button-dark.button-ghost-primary {
   border-color: $bg-primary;
-  color: $text-primary;
+  color: $text-primary !important;
   path,
-  & * {
-    color: $text-primary;
+  * {
+    color: $text-primary !important;
   }
   &::after {
     background: $bg-primary;
   }
 }
 
-.button-ghost-success {
+.button-ghost-success,
+.button-dark.button-ghost-success {
   border-color: $bg-green;
-  color: $text-green;
+  color: $text-green !important;
   path,
-  & * {
-    color: $text-green;
+  * {
+    color: $text-green !important;
   }
   &::after {
     background: $bg-green;
   }
 }
 
-.button-ghost-warning {
+.button-ghost-warning,
+.button-dark.button-ghost-warning {
   border-color: $bg-orange;
-  color: $text-orange;
+  color: $text-orange !important;
   path,
-  & * {
-    color: $text-orange;
+  * {
+    color: $text-orange !important;
   }
   &::after {
     background: $bg-orange;
   }
 }
 
-.button-ghost-danger {
+.button-ghost-danger,
+.button-dark.button-ghost-danger {
   border-color: $bg-red;
-  color: $text-red;
+  color: $text-red !important;
   path,
-  & * {
-    color: $text-red;
+  * {
+    color: $text-red !important;
   }
   &::after {
     background: $bg-red;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Langs } from "@/common/interface/lang";
+import { Langs } from "@/common/type/lang";
 import { FaAngleDown, FaTimesCircle } from "react-icons/fa";
 
 interface SelectTagControlProps extends React.InputHTMLAttributes<HTMLInputElement> {

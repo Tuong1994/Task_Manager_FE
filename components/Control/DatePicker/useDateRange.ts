@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectDate } from "@/common/interface/form";
+import { SelectDate } from "@/common/type/form";
 
 const useDateRange = (year: number, month: number) => {
   const lastDateOfMonth = new Date(year, month + 1, 0).getDate();

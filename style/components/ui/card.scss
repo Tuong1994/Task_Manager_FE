@@ -1,12 +1,14 @@
 .card {
   width: $w-full;
   background: $bg-white;
-  border: 0.5px solid $bg-gray-light;
   border-radius: $rounded;
   transition: all $transition-duration-md $transition-fn;
   .card-header {
     padding: calc($p-2 - 0.5rem);
-    border-bottom: 0.5px solid $bg-gray-light;
+    * {
+      margin: 0;
+      padding: 0;
+    }
   }
   .card-body {
     padding: calc($p-2 - 0.5rem);
@@ -16,5 +18,18 @@
 .card-hoverable {
   &:hover {
     box-shadow: 0.5rem 0.5rem 1rem $bg-gray-light;
+  }
+}
+
+.card-border {
+  border: 0.5px solid $bg-gray-light;
+  .card-header {
+    border-bottom: 0.5px solid $bg-gray-light;
+  }
+}
+
+.card-dark.card-hoverable {
+  &:hover {
+    box-shadow: 0.5rem 0.5rem 1rem $bg-black-rgba;
   }
 }

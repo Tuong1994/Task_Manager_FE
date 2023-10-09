@@ -62,30 +62,34 @@ const GridCol: React.ForwardRefRenderFunction<HTMLDivElement, GridColProps> = (
   React.useEffect(() => {
     if (hide) setHide(false);
 
-    if (span === 0 || xs === 0 || md === 0 || lg === 0) setHide(true);
-  }, [span, xs, md, lg]);
-
-  React.useEffect(() => {
     if (isDesktop) {
+      if (span === 0) return setHide(true);
+
       if (span === 24) return setWidth("100%");
 
       return setWidth(calculateWidth(span));
     }
 
     if (isPhone) {
+      if (xs === 0) return setHide(true);
+
       if (xs && xs !== 24) return setWidth(calculateWidth(xs));
     }
 
     if (isTablet) {
+      if (md === 0) return setHide(true);
+
       if (md && md !== 24) return setWidth(calculateWidth(md));
     }
 
     if (isLaptop) {
+      if (lg === 0) return setHide(true);
+
       if (lg && lg !== 24) return setWidth(calculateWidth(lg));
     }
 
-    if (xs === 0 || md === 0 || lg === 0) return setWidth("100%");
-  }, [gapSize, span, xs, md, lg, isDesktop, isLaptop, isTablet, isPhone]);
+    if (xs === 24 || md === 24 || lg === 24) return setWidth("100%");
+  }, [span, xs, md, lg, gapSize, hide, isDesktop, isLaptop, isTablet, isPhone]);
 
   return !hide ? (
     <div ref={ref} style={inlineStyle()} className={`grid-col ${rootClassName}`}>

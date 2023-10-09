@@ -3,3 +3,27 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.space-start {
+  justify-content: flex-start;
+}
+
+.space-center {
+  justify-content: center;
+}
+
+.space-end {
+  justify-content: flex-end;
+}
+
+.space-top {
+  align-items: flex-start;
+}
+
+.space-middle {
+  align-items: center;
+}
+
+.space-bottom {
+  align-items: flex-end;
+}

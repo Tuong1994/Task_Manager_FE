@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectOption } from "@/common/interface/form";
+import { SelectOption } from "@/common/type/form";
 import { FaTimesCircle } from "react-icons/fa";
 
 interface SelectTagListProps {

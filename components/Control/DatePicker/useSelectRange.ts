@@ -1,5 +1,5 @@
 import React from "react";
-import { SelectDate } from "@/common/interface/form";
+import { SelectDate } from "@/common/type/form";
 
 const useSelectRange = (args: { date: SelectDate; max?: "today" | string; min?: "today" | string }) => {
   const { date, max, min } = args;

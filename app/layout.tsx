@@ -1,5 +1,6 @@
-import { UI } from "@/components";
+import React from "react";
 import type { Metadata } from "next";
+import { UI } from "@/components";
 import Providers from "@/redux/Provider";
 import "@/style/main.scss";
 
@@ -15,7 +16,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         <Providers>
-          <Layout>{children}</Layout>
+          <React.Fragment>
+            <Layout>{children}</Layout>
+            <div id="portal"></div>
+          </React.Fragment>
         </Providers>
       </body>
     </html>

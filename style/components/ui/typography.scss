@@ -1,0 +1,79 @@
+// Title
+.title {
+  margin-bottom: $m-1;
+}
+
+.title-dark {
+  color: $text-white;
+  * {
+    color: $text-white;
+  }
+}
+
+.title-1 {
+  font-weight: $font-medium;
+  font-size: $text-xxl;
+}
+
+.title-2 {
+  font-weight: $font-medium;
+  font-size: $text-3xl;
+}
+
+.title-3 {
+  font-weight: $font-medium;
+  font-size: $text-2xl;
+}
+
+.title-4 {
+  font-size: $text-xl;
+}
+
+.title-5 {
+  font-size: $text-lg;
+}
+
+.title-6 {
+  font-size: $text-md;
+}
+
+// Paragraph
+.paragraph {
+  line-height: calc($h-1 * 2);
+  margin-bottom: $m-1;
+}
+
+.paragraph-dark {
+  color: $text-white;
+  * {
+    color: $text-white;
+  }
+}
+
+.paragraph-left {
+  text-align: left;
+  * {
+    text-align: left;
+  }
+}
+
+.paragraph-right {
+  text-align: right;
+  * {
+    text-align: right;
+  }
+}
+
+.paragraph-center {
+  text-align: center;
+  * {
+    text-align: center;
+  }
+}
+
+.paragraph-justify {
+  text-align: justify;
+  * {
+    text-align: justify;
+  }
+}

@@ -1,0 +1,68 @@
+.dashboard-statistic {
+  margin-bottom: $m-5;
+  .statistic-card {
+    * {
+      color: $text-white !important;
+    }
+    .card-content {
+      margin: 0;
+      margin-top: $m-2;
+      font-size: $text-3xl;
+      font-weight: $font-semi-bold;
+    }
+  }
+  .statistic-task {
+    background: $bg-primary;
+    border-color: $bg-primary;
+  }
+  .statistic-finished {
+    background: $bg-green;
+    border-color: $bg-green;
+  }
+  .statistic-doing {
+    background: $bg-orange;
+    border-color: $bg-orange;
+  }
+  .statistic-unfinished {
+    background: $bg-red;
+    border-color: $bg-red;
+  }
+}
+
+.dashboard-chart {
+  .chart-view {
+    height: calc($h-1 * 35);
+    overflow: auto;
+    @include respond(mdPhone) {
+      height: calc($h-1 * 45);
+      padding: $p-1;
+    }
+  }
+}
+
+.dashboard-task-body {
+  height: calc($h-1 * 35);
+  overflow-y: auto;
+  .body-item {
+    margin-bottom: $m-2;
+    .item-wrap {
+      transition: all $transition-duration-md $transition-fn;
+      border-left: 5px solid $bg-primary;
+      &:hover {
+        border-color: $bg-primary;
+      }
+      .wrap-head {
+        padding: 0;
+        .head-title {
+          color: $text-black;
+        }
+      }
+      .wrap-badges {
+        padding: 0;
+      }
+    }
+    &:last-child {
+      margin: 0;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import React from "react";
-import { SelectOption } from "@/common/interface/form";
+import { SelectOption } from "@/common/type/form";
 import { FaCheck } from "react-icons/fa";
-import { Langs } from "@/common/interface/lang";
+import { Langs } from "@/common/type/lang";
 import Spin from "@/components/UI/Spin";
 import SelectPagination from "./Pagination";
 

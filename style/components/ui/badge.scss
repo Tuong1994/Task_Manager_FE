@@ -1,11 +1,14 @@
 .badge {
-  padding: calc($p-1 - 0.5rem) calc($p-1 - 0.2rem);
+  width: max-content;
+  padding: calc($p-1 - 0.8rem) calc($p-1 - 0.2rem);
   border: 0.5px solid transparent;
   border-radius: $rounded-lg;
   background: $bg-gray-light;
-  font-size: $text-xs;
+  font-size: $text-2xs;
+  font-weight: $font-thin;
   & * {
-    font-size: $text-xs;
+    font-size: $text-2xs;
+    font-weight: $font-thin;
   }
 }
 
@@ -14,7 +17,8 @@
   border-color: $bg-gray-light;
 }
 
-.badge-primary {
+// Color
+.badge-emerald {
   background: $bg-primary;
   color: $text-white;
   & * {
@@ -22,7 +26,7 @@
   }
 }
 
-.badge-success {
+.badge-green {
   background: $bg-green;
   color: $text-white;
   & * {
@@ -30,7 +34,7 @@
   }
 }
 
-.badge-warning {
+.badge-orange {
   background: $bg-orange;
   color: $text-white;
   & * {
@@ -38,7 +42,7 @@
   }
 }
 
-.badge-danger {
+.badge-red {
   background: $bg-red;
   color: $text-white;
   & * {
@@ -46,38 +50,115 @@
   }
 }
 
-.badge-ghost-primary {
+.badge-blue {
+  background: $bg-blue;
+  color: $text-white;
+  & * {
+    color: $text-white;
+  }
+}
+
+.badge-violet {
+  background: $bg-violet;
+  color: $text-white;
+  & * {
+    color: $text-white;
+  }
+}
+
+.badge-pink {
+  background: $bg-pink;
+  color: $text-white;
+  & * {
+    color: $text-white;
+  }
+}
+
+.badge-yellow {
+  background: $bg-yellow;
+  color: $text-white;
+  & * {
+    color: $text-white;
+  }
+}
+
+// Ghost
+.badge-ghost-emerald,
+.badge-dark.badge-ghost-emerald {
   background: $bg-primary-rgba;
   border-color: $bg-primary;
-  color: $text-primary;
+  color: $text-primary !important;
   & * {
-    color: $text-primary;
+    color: $text-primary !important;
   }
 }
 
-.badge-ghost-success {
+.badge-ghost-green,
+.badge-dark.badge-ghost-green {
   background: $bg-green-rgba;
   border-color: $bg-green;
-  color: $text-green;
+  color: $text-green !important;
   & * {
-    color: $text-green;
+    color: $text-green !important;
   }
 }
 
-.badge-ghost-warning {
+.badge-ghost-orange,
+.badge-dark.badge-ghost-orange {
   background: $bg-orange-rgba;
   border-color: $bg-orange;
-  color: $text-orange;
+  color: $text-orange !important;
   & * {
-    color: $text-orange;
+    color: $text-orange !important;
   }
 }
 
-.badge-ghost-danger {
+.badge-ghost-red,
+.badge-dark.badge-ghost-red {
   background: $bg-red-rgba;
   border-color: $bg-red;
-  color: $text-red;
+  color: $text-red !important;
   & * {
-    color: $text-red;
+    color: $text-red !important;
+  }
+}
+
+.badge-ghost-blue,
+.badge-dark.badge-ghost-blue {
+  background: $bg-blue-rgba;
+  border-color: $bg-blue;
+  color: $text-blue !important;
+  & * {
+    color: $text-blue !important;
+  }
+}
+
+.badge-ghost-violet,
+.badge-dark.badge-ghost-violet {
+  background: $bg-violet-rgba;
+  border-color: $bg-violet;
+  color: $text-violet !important;
+  & * {
+    color: $text-violet !important;
+  }
+}
+
+.badge-ghost-pink,
+.badge-dark.badge-ghost-pink {
+  background: $bg-pink-rgba;
+  border-color: $bg-pink;
+  color: $text-pink !important;
+  & * {
+    color: $text-pink !important;
+  }
+}
+
+.badge-ghost-yellow,
+.badge-dark.badge-ghost-yellow {
+  background: $bg-yellow-rgba;
+  border-color: $bg-yellow;
+  color: $text-yellow !important;
+  & * {
+    color: $text-yellow !important;
   }
 }

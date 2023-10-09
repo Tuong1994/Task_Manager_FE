@@ -1,4 +1,4 @@
-import { ELang, Langs } from "@/common/interface/lang";
+import { ELang, Langs } from "@/common/type/lang";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import eng from "@/common/lang/eng";
 import vn from "@/common/lang/vn";
