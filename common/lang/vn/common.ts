@@ -30,8 +30,11 @@ const commonVn = {
   },
   actions: {
     ok: "Ok",
+    save: "Lưu",
+    create: "Tạo mới",
+    update: "Cập nhật",
     cancel: "Hủy bỏ",
-    export: "Export excel"
+    export: "Export excel",
   },
   options: {
     newest: "Mới nhất",

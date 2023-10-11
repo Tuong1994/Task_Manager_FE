@@ -30,6 +30,9 @@ const commonEng = {
   },
   actions: {
     ok: "Ok",
+    save: "Save",
+    create: "Create",
+    update: "Update",
     cancel: "Cancel",
     export: "Export excel",
   },

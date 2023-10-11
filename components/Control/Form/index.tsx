@@ -3,7 +3,7 @@
 import React from "react";
 import { useForm, FormProvider, FieldValues, SubmitHandler } from "react-hook-form";
 
-interface FormProps<M> extends React.FormHTMLAttributes<HTMLFormElement> {
+export interface FormProps<M> extends React.FormHTMLAttributes<HTMLFormElement> {
   initialData: M;
   children?: React.ReactNode | React.ReactNode[];
   onFinish?: (formData: M) => void;

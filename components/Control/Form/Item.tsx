@@ -8,7 +8,7 @@ import { FieldError, FormRule } from "@/common/type/form";
 import FormItemContext, { FormItemContextState } from "./Context";
 import NoteMessage from "@/components/UI/NoteMessage";
 
-interface FormItemProps {
+export interface FormItemProps {
   name: string;
   rules?: FormRule[];
   children?: React.ReactNode | React.ReactNode[];
