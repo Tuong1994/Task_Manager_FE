@@ -31,6 +31,11 @@ const commonEng = {
   actions: {
     ok: "Ok",
     cancel: "Cancel",
+    export: "Export excel",
+  },
+  options: {
+    newest: "Newest",
+    oldest: "Oldest",
   },
 };
 

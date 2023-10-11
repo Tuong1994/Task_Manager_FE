@@ -1,11 +1,11 @@
 import React from "react";
 import useTheme from "@/hooks/useTheme";
 
-interface BadgeProps {
+export interface BadgeProps {
   rootClassName?: string;
   style?: React.CSSProperties;
   children?: React.ReactNode | React.ReactNode[];
-  color?: "emerald" | "blue" | "green" | "orange" | "red" | "yellow" | "violet" | "pink";
+  color?: "emerald" | "blue" | "green" | "orange" | "red" | "yellow" | "violet" | "pink" | "black";
   ghost?: boolean;
 }
 

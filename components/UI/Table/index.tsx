@@ -3,6 +3,7 @@
 import React from "react";
 import TableHead from "./TableHead";
 import TableBody from "./TableBody";
+import TableFilter from "./TableFilter";
 
 export type TableColumn<Record = unknown> = {
   id: string;
@@ -23,7 +24,7 @@ export interface TableProps<M, E> {
   hasFilter?: boolean;
   hasExpand?: boolean;
   hasSelectRow?: boolean;
-  filter?: () => React.ReactNode;
+  filter?: React.ReactNode | React.ReactNode[];
   onSelectRow?: (keys: React.Key[]) => void;
 }
 
@@ -52,10 +53,7 @@ const Table = <M extends object, E = unknown>(
   }, [rowSelectedKeys.length]);
 
   const data = React.useMemo(
-    () =>
-      dataSource.filter(
-        (data) => !disabledRowKeys.includes(data[rowKey ? rowKey : ("id" as keyof M)])
-      ),
+    () => dataSource.filter((data) => !disabledRowKeys.includes(data[rowKey ? rowKey : ("id" as keyof M)])),
     [disabledRowKeys.length, dataSource.length]
   );
 
@@ -68,8 +66,7 @@ const Table = <M extends object, E = unknown>(
   };
 
   const handleSelectAllRow = () => {
-    if (rowSelectedKeys.length && rowSelectedKeys.length === data.length)
-      return setRowSelectedKeys([]);
+    if (rowSelectedKeys.length && rowSelectedKeys.length === data.length) return setRowSelectedKeys([]);
 
     setRowSelectedKeys([...data].map((data, idx) => (rowKey ? data[rowKey] : `col-${idx}`)));
   };
@@ -90,7 +87,7 @@ const Table = <M extends object, E = unknown>(
 
   return (
     <div className="table-wrap">
-      {hasFilter && <div className="wrap-actions">{filter?.()}</div>}
+      {hasFilter && <TableFilter filter={filter} />}
 
       <div className={`wrap-content ${!hasFilter ? "wrap-content-radius" : ""}`}>
         <table ref={ref}>

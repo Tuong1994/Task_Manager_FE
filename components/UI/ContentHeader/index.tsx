@@ -22,14 +22,16 @@ const ContentHeader: React.ForwardRefRenderFunction<HTMLDivElement, ContentHeade
 
   return (
     <div ref={ref} style={style} className={`content-header ${rootClassName}`}>
-      <GridRow rootClassName="header-inner" justify="between">
+      <GridRow rootClassName="header-inner" justify="between" align="line">
         <GridCol
           xs={actions ? 12 : 24}
           md={actions ? 12 : 24}
           lg={actions ? 12 : 24}
           span={actions ? 12 : 24}
         >
-          <Title level={3}>{title}</Title>
+          <Title rootClassName="inner-title" level={3}>
+            {title}
+          </Title>
 
           {total && (
             <Space rootClassName="inner-content">
@@ -41,9 +43,7 @@ const ContentHeader: React.ForwardRefRenderFunction<HTMLDivElement, ContentHeade
 
         {actions && (
           <GridCol xs={12} md={12} lg={12} span={12}>
-            <Space rootClassName="inner-actions" justify="end">
-              {actions}
-            </Space>
+            <div className="inner-actions">{actions}</div>
           </GridCol>
         )}
       </GridRow>

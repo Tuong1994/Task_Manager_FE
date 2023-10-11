@@ -82,6 +82,14 @@
   }
 }
 
+.badge-black {
+  background: $bg-black;
+  color: $text-white;
+  & * {
+    color: $text-white;
+  }
+}
+
 // Ghost
 .badge-ghost-emerald,
 .badge-dark.badge-ghost-emerald {
@@ -160,5 +168,15 @@
   color: $text-yellow !important;
   & * {
     color: $text-yellow !important;
+  }
+}
+
+.badge-ghost-black,
+.badge-dark.badge-ghost-black {
+  background: $bg-black-rgba-xs;
+  border-color: $bg-black;
+  color: $text-black !important;
+  & * {
+    color: $text-black !important;
   }
 }

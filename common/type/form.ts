@@ -10,16 +10,11 @@ export type FormRule = {
   minLength?: number;
   maxLength?: number;
   message?: string;
-  validate?: Validate<any, any>
+  validate?: Validate<any, any>;
 };
 
 export type FieldError = {
   [x: string]: any;
-};
-
-export type SelectOption = {
-  label: string;
-  value: string | number;
 };
 
 export type SelectDate = {
@@ -29,4 +24,13 @@ export type SelectDate = {
   year: number;
   date: number;
   type: "main" | "sub";
+};
+
+export type SelectOption = {
+  label: string;
+  value: string | number;
+};
+
+export type Options = {
+  filter: SelectOption[];
 };

@@ -18,6 +18,9 @@
       padding: calc($p-1 - 0.2rem) $p-1;
       cursor: pointer;
       transition: all $transition-duration-md $transition-fn;
+      * {
+        margin: 0;
+      }
       &:hover {
         background: $bg-primary-rgba;
       }

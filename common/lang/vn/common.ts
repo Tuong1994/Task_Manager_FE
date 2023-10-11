@@ -31,6 +31,11 @@ const commonVn = {
   actions: {
     ok: "Ok",
     cancel: "Hủy bỏ",
+    export: "Export excel"
+  },
+  options: {
+    newest: "Mới nhất",
+    oldest: "Cũ nhất",
   },
 };
 

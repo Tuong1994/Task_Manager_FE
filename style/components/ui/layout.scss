@@ -161,7 +161,7 @@
     @include respond(laptop) {
       width: calc($w-full - 70%);
     }
-    @include respond(smTablet) {
+    @include respond(mdTablet) {
       display: none;
     }
   }

@@ -17,24 +17,28 @@ const Space: React.ForwardRefRenderFunction<HTMLDivElement, SpaceProps> = (
 
   const alignClassName = `space-${align}`;
 
-  const itemStyle = (idx: number) => {
+  const inlineStyle = () => {
     const childs = React.Children.count(children);
 
-    if (idx === childs - 1) return;
+    if (childs === 1) return;
 
-    if (typeof size === "number") return { marginRight: `${size}px` };
+    if (typeof size === "number") return { ...style, gap: `${size}px` };
 
-    if (size === "sm") return { marginRight: "10px" };
+    if (size === "sm") return { ...style, gap: "10px" };
 
-    if (size === "md") return { marginRight: "40px" };
+    if (size === "md") return { ...style, gap: "40px" };
 
-    if (size === "lg") return { marginRight: "60px" };
+    if (size === "lg") return { ...style, gap: "60px" };
   };
 
   return (
-    <div ref={ref} style={style} className={`space ${justifyClassName} ${alignClassName} ${rootClassName}`}>
-      {React.Children.map(children, (child, idx) => (
-        <div style={itemStyle(idx)}>{child}</div>
+    <div
+      ref={ref}
+      style={inlineStyle()}
+      className={`space ${justifyClassName} ${alignClassName} ${rootClassName}`}
+    >
+      {React.Children.map(children, (child) => (
+        <div>{child}</div>
       ))}
     </div>
   );

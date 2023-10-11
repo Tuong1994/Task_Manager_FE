@@ -12,3 +12,8 @@ export type MenuItem = {
   label: React.ReactNode | React.ReactNode[];
   icon?: React.ReactNode | React.ReactNode[];
 };
+
+export enum EFilter {
+  NEWEST = 1,
+  OLDEST = 2,
+}

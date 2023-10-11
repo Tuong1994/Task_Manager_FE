@@ -6,11 +6,16 @@ import { UI } from "@/components";
 import { EGender, EPosition, ERole, Staff } from "@/common/type/staff";
 import { Columns } from "@/components/UI/Table";
 import useLangs from "@/hooks/useLangs";
+import useRenderContent from "@/features/staff/hooks/useRenderContent";
+import StaffListFilter from "@/features/staff/list/Filter";
+import Link from "next/link";
 
-const { ContentHeader, Table, Badge } = UI;
+const { ContentHeader, Table, Pagination, Button, Space } = UI;
 
 const Staffs: NextPage = () => {
   const { langs } = useLangs();
+
+  const { renderGender, renderPosition, renderRole } = useRenderContent();
 
   const dataSource: Staff[] = [
     {
@@ -54,26 +59,52 @@ const Staffs: NextPage = () => {
   const columns: Columns<Staff> = [
     { id: "name", title: langs?.common.table.fullName, dataIndex: "fullName" },
     { id: "phone", title: langs?.common.table.phone, dataIndex: "phone" },
-    { id: "email", title: langs?.common.table.email, dataIndex: "email" },
     {
       id: "gender",
       title: langs?.common.table.gender,
       dataIndex: "gender",
-      render: (gender) => (
-        <Badge color="red">
-          Male
-        </Badge>
-      ),
+      render: (gender) => renderGender(gender),
     },
-    { id: "position", title: langs?.common.table.position, dataIndex: "position" },
-    { id: "role", title: langs?.common.table.role, dataIndex: "role" },
+    { id: "email", title: langs?.common.table.email, dataIndex: "email" },
+    {
+      id: "position",
+      title: langs?.common.table.position,
+      dataIndex: "position",
+      render: (position) => renderPosition(position),
+    },
+    {
+      id: "role",
+      title: langs?.common.table.role,
+      dataIndex: "role",
+      render: (role) => renderRole(role),
+    },
   ];
 
   return (
     <React.Fragment>
-      <ContentHeader title={langs?.staff.title} />
+      <ContentHeader
+        title={langs?.staff.list.title}
+        total={dataSource.length}
+        actions={
+          <Space justify="end">
+            <Button variant="success">{langs?.common.actions.export}</Button>
 
-      <Table<Staff> dataSource={dataSource} columns={columns} />
+            <Link href="/staff/1">
+              <Button variant="primary">{langs?.staff.list.action}</Button>
+            </Link>
+          </Space>
+        }
+      />
+
+      <Table<Staff>
+        hasSelectRow
+        hasFilter
+        dataSource={dataSource}
+        columns={columns}
+        filter={<StaffListFilter />}
+      />
+
+      <Pagination showContent />
     </React.Fragment>
   );
 };

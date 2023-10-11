@@ -6,7 +6,7 @@
   align-items: center;
   .pagination-content {
     color: $text-gray-medium;
-    @include respond(smTablet) {
+    @include respond(mdTablet) {
       margin-bottom: $m-1;
     }
   }
@@ -57,7 +57,7 @@
       }
     }
   }
-  @include respond(smTablet) {
+  @include respond(mdTablet) {
     flex-direction: column;
     align-items: center;
     justify-content: center;

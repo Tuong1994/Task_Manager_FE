@@ -8,7 +8,7 @@ export interface GridRowProps {
   style?: React.CSSProperties;
   children?: React.ReactNode | React.ReactNode[];
   justify?: "start" | "end" | "center" | "between" | "around" | "evenly";
-  align?: "top" | "middle" | "bottom";
+  align?: "top" | "middle" | "bottom" | "line";
   gutters?: [number?, number?];
 }
 

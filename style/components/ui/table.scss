@@ -3,9 +3,12 @@
   .wrap-actions {
     padding: $p-1;
     border: 0.5px solid $bg-gray-light;
-    background: $bg-primary-rgba;
+    background: $bg-white;
     border-top-left-radius: $rounded;
     border-top-right-radius: $rounded;
+    * {
+      margin: 0;
+    }
   }
   .wrap-content {
     max-width: $w-full;
@@ -32,7 +35,7 @@
             border-bottom: unset;
           }
           &:hover {
-            background: $bg-primary-rgba;
+            background: $bg-gray-light;
           }
           td {
             padding: calc($p-2 - 0.5rem);
@@ -84,7 +87,7 @@
         }
       }
       .content-selected {
-        background: $bg-primary-rgba;
+        background: $bg-gray-light;
       }
     }
   }

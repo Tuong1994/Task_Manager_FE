@@ -42,7 +42,7 @@ export interface GridColProps {
 }
 
 const GridCol: React.ForwardRefRenderFunction<HTMLDivElement, GridColProps> = (
-  { rootClassName = "", style, children, span = 24, xs, md, lg },
+  { rootClassName = "", style, children, span, xs, md, lg },
   ref
 ) => {
   const { gutters } = React.useContext(GridContext);
@@ -63,6 +63,8 @@ const GridCol: React.ForwardRefRenderFunction<HTMLDivElement, GridColProps> = (
     if (hide) setHide(false);
 
     if (isDesktop) {
+      if(span === undefined) return setWidth("auto");
+
       if (span === 0) return setHide(true);
 
       if (span === 24) return setWidth("100%");
