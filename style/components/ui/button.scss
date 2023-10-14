@@ -5,6 +5,7 @@
   background: $bg-white;
   transition: opacity $transition-duration-md $transition-fn;
   display: flex;
+  justify-content: center;
   align-items: center;
   position: relative;
   &:hover::before {
@@ -179,4 +180,11 @@
   &::after {
     background: $bg-red;
   }
+}
+
+.button-link {
+  padding: 0;
+  background: transparent;
+  border: unset;
+  color: $text-blue;
 }

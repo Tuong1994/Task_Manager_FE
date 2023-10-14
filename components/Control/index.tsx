@@ -8,6 +8,7 @@ import TextArea from "./TextArea";
 import Select from "./Select";
 import SelectTag from "./SelectTag";
 import DatePicker from "./DatePicker";
+import CheckBox from "./CheckBox";
 
 export {
   Form,
@@ -20,4 +21,5 @@ export {
   Select,
   SelectTag,
   DatePicker,
+  CheckBox,
 };

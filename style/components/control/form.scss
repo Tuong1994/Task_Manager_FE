@@ -1,4 +1,7 @@
-.form-item,
-.form-footer {
+.form-item {
   margin-bottom: calc($m-2 - 0.5rem);
+}
+
+.form-footer {
+  margin-top: $m-3;
 }

@@ -1,6 +1,7 @@
 import * as Grid from "./Grid";
 import * as Typography from "./Typography";
-import Layout from "./Layout";
+import NoteMessage from "./NoteMessage";
+import Header from "./Header";
 import Badge from "./Badge";
 import Button from "./Button";
 import Switch from "./Switch";
@@ -18,7 +19,7 @@ import Drawer from "./Drawer";
 import ContentHeader from "./ContentHeader";
 
 export {
-  Layout,
+  Header,
   Button,
   Badge,
   Switch,
@@ -36,4 +37,5 @@ export {
   Drawer,
   Typography,
   ContentHeader,
+  NoteMessage,
 };

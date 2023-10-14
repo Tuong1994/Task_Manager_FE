@@ -5,10 +5,10 @@ import { NextPage } from "next";
 import { UI } from "@/components";
 import { EGender, EPosition, ERole, Staff } from "@/common/type/staff";
 import { Columns } from "@/components/UI/Table";
-import useLangs from "@/hooks/useLangs";
-import useRenderContent from "@/features/staff/hooks/useRenderContent";
-import StaffListFilter from "@/features/staff/list/Filter";
+import StaffsFilter from "@/features/main/staff/list/Filter";
 import Link from "next/link";
+import useLangs from "@/hooks/useLangs";
+import useRenderContent from "@/features/main/staff/hooks/useRenderContent";
 
 const { ContentHeader, Table, Pagination, Button, Space } = UI;
 
@@ -101,7 +101,7 @@ const Staffs: NextPage = () => {
         hasFilter
         dataSource={dataSource}
         columns={columns}
-        filter={<StaffListFilter />}
+        filter={<StaffsFilter />}
       />
 
       <Pagination showContent />

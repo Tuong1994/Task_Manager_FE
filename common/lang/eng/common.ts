@@ -15,6 +15,17 @@ const commonEng = {
     },
   },
   form: {
+    label: {
+      account: "Account",
+      password: "Password",
+      fullName: "Full name",
+      phone: "Phone",
+      email: "Email",
+      birthday: "Birthday",
+      gender: "Gender",
+      position: "Position",
+      role: "Role",
+    },
     placeholder: {
       type: "Type in",
       select: "Select",

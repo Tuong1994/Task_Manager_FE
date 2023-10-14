@@ -2,6 +2,12 @@
   margin: $m-1 0;
 }
 
+.note-message-dark {
+  p {
+    color: $text-white;
+  }
+}
+
 .note-message-error {
   p {
     color: $text-red;

@@ -1,10 +1,10 @@
 import React from "react";
 import { MenuItem } from "@/common/type/base";
 import { FaSignOutAlt, FaTasks, FaUser } from "react-icons/fa";
-import Space from "../../Space";
-import Avatar from "../../Avatar";
-import Tooltip from "../../Tooltip";
-import Dropdown from "../../Dropdown";
+import Space from "../Space";
+import Avatar from "../Avatar";
+import Tooltip from "../Tooltip";
+import Dropdown from "../Dropdown";
 import Link from "next/link";
 import useLangs from "@/hooks/useLangs";
 

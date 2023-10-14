@@ -2,8 +2,8 @@ import React from "react";
 import { FaLightbulb, FaMoon } from "react-icons/fa";
 import { switchTheme } from "@/redux/slice/themeSlice";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import Space from "../../Space";
-import Switch from "../../Switch";
+import Space from "../Space";
+import Switch from "../Switch";
 
 interface ThemeButtonProps {}
 

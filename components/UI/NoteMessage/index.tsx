@@ -1,3 +1,4 @@
+import useTheme from "@/hooks/useTheme";
 import React from "react";
 
 export interface NoteMessageProps {
@@ -22,10 +23,16 @@ const NoteMessage: React.ForwardRefRenderFunction<HTMLDivElement, NoteMessagePro
   },
   ref
 ) => {
+  const themeClassName = useTheme("note-message");
+
   const messageStyle = { fontSize: `${size}px`, fontWeight: weight, fontStyle: textStyle };
 
   return (
-    <div ref={ref} style={style} className={`note-message note-message-${type} ${rootClassName}`}>
+    <div
+      ref={ref}
+      style={style}
+      className={`note-message note-message-${type} ${themeClassName} ${rootClassName}`}
+    >
       <p style={messageStyle}>{message}</p>
     </div>
   );

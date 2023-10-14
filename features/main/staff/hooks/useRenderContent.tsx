@@ -1,8 +1,7 @@
-import useLangs from "../../../hooks/useLangs";
-
 import { UI } from "@/components";
 import { EGender, EPosition, ERole } from "@/common/type/staff";
 import { BadgeProps } from "@/components/UI/Badge";
+import useLangs from "@/hooks/useLangs";
 
 const { Badge } = UI;
 

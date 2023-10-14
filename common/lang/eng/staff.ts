@@ -14,7 +14,7 @@ const staffEng = {
     admin: "Admin",
   },
   list: {
-    title: "Staff",
+    title: "Staffs",
     action: "Create staff",
   },
 };

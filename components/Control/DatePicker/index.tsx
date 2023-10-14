@@ -49,13 +49,13 @@ const DatePicker: React.ForwardRefRenderFunction<HTMLDivElement, DatePickerProps
 ) => {
   const rhfMethods = useFormContext();
 
-  const { isRhf, rhfName, rhfValue, rhfError } = React.useContext(FormItemContext);
+  const { isRhf, rhfName, rhfValue, rhfError, rhfDisabled } = React.useContext(FormItemContext);
+
+  const controlDisabled = rhfDisabled ? rhfDisabled : disabled;
 
   const sizeClassName = `datepicker-${sizes}`;
 
   const gapClassName = !isRhf ? "datepicker-gap" : "";
-
-  const disabledClassName = disabled ? "datepicker-group-disabled" : "";
 
   const [open, setOpen] = React.useState<boolean>(false);
 
@@ -68,6 +68,8 @@ const DatePicker: React.ForwardRefRenderFunction<HTMLDivElement, DatePickerProps
   const isBottom = useDetectBottom(datePickerRef);
 
   useClickOutside(datePickerRef, setOpen);
+
+  React.useEffect(() => rhfMethods.setValue(rhfName, new Date()), []);
 
   React.useEffect(() => {
     if (rhfValue) setSelectedDate(rhfValue);
@@ -103,9 +105,9 @@ const DatePicker: React.ForwardRefRenderFunction<HTMLDivElement, DatePickerProps
           format={format}
           prefixes={prefixes}
           rhfError={rhfError}
+          disabled={controlDisabled}
           inputStyle={inputStyle}
           inputClassName={inputClassName}
-          disabledClassName={disabledClassName}
           selectedDate={selectedDate}
           handleOpen={handleOpen}
           handleClearInput={handleClearInput}

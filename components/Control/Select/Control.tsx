@@ -9,6 +9,7 @@ interface SelectControlProps extends React.InputHTMLAttributes<HTMLInputElement>
   placeholder?: string;
   inputClassName?: string;
   inputStyle?: React.CSSProperties;
+  disabled?: boolean;
   prefixes?: React.ReactNode | React.ReactNode[];
   isClear: () => boolean;
   handleOpen: () => void;

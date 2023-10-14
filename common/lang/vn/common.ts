@@ -15,6 +15,17 @@ const commonVn = {
     },
   },
   form: {
+    label: {
+      account: "Tài khoản",
+      password: "Mật khẩu",
+      fullName: "Họ và tên",
+      phone: "Điện thoại",
+      email: "Email",
+      birthday: "Ngày sinh",
+      gender: "Giới tính",
+      position: "Chức vụ",
+      role: "Cấp bậc",
+    },
     placeholder: {
       type: "Nhập vào",
       select: "Chọn",

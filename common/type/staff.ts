@@ -26,8 +26,3 @@ export type Staff = {
   createdAt?: Date | string;
   updatedAt?: Date | string;
 };
-
-export type Auth = Staff & {
-  account: string;
-  password: string;
-};

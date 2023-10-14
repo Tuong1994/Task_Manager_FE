@@ -1,10 +1,9 @@
 import React from "react";
 import type { Metadata } from "next";
-import { UI } from "@/components";
 import Providers from "@/redux/Provider";
+import Auth from "@/features/auth/Auth";
+import Container from "@/features/main/container";
 import "@/style/main.scss";
-
-const { Layout } = UI;
 
 export const metadata: Metadata = {
   title: "Task Manager",
@@ -12,12 +11,14 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const isAuth = true;
+
   return (
     <html lang="en">
       <body>
         <Providers>
           <React.Fragment>
-            <Layout>{children}</Layout>
+            {isAuth ? <Container>{children}</Container> : <Auth isAuth={isAuth} />}
             <div id="portal"></div>
           </React.Fragment>
         </Providers>

@@ -10,11 +10,12 @@ import NoteMessage from "@/components/UI/NoteMessage";
 
 export interface FormItemProps {
   name: string;
+  disabled?: boolean;
   rules?: FormRule[];
   children?: React.ReactNode | React.ReactNode[];
 }
 
-const FormItem: React.FC<FormItemProps> = ({ children, rules, name = "" }) => {
+const FormItem: React.FC<FormItemProps> = ({ children, rules, name = "", disabled }) => {
   const formMethods = useFormContext();
 
   const {
@@ -27,6 +28,7 @@ const FormItem: React.FC<FormItemProps> = ({ children, rules, name = "" }) => {
     rhfValue: value,
     rhfName: fieldName,
     rhfError: invalid,
+    rhfDisabled: disabled,
     isRhf: true,
     rhfOnChange: onChange,
     rhfOnBlur: onBlur,
@@ -34,6 +36,8 @@ const FormItem: React.FC<FormItemProps> = ({ children, rules, name = "" }) => {
 
   const getRules = () => {
     const fieldRule: FieldError = {};
+
+    if (disabled) return fieldRule;
 
     if (!rules) return fieldRule;
 

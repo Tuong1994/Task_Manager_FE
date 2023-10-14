@@ -23,6 +23,7 @@ export interface SelectTagProps extends React.InputHTMLAttributes<HTMLInputEleme
   sizes?: "sm" | "md" | "lg";
   async?: boolean;
   loading?: boolean;
+  disabled?: boolean;
   total?: number;
   limit?: number;
   options?: SelectOption[];
@@ -46,6 +47,7 @@ const SelectTag: React.ForwardRefRenderFunction<HTMLInputElement, SelectTagProps
     placeholder,
     async = false,
     loading = false,
+    disabled,
     total = 100,
     limit = 10,
     options = [],
@@ -58,9 +60,11 @@ const SelectTag: React.ForwardRefRenderFunction<HTMLInputElement, SelectTagProps
 ) => {
   const rhfMethods = useFormContext();
 
-  const { isRhf, rhfName, rhfValue, rhfError } = React.useContext(FormItemContext);
+  const { isRhf, rhfName, rhfValue, rhfError, rhfDisabled } = React.useContext(FormItemContext);
 
   const { langs } = useLangs();
+
+  const controlDisabled = rhfDisabled ? rhfDisabled : disabled;
 
   const totalPages = Math.ceil(total / limit);
 
@@ -162,6 +166,7 @@ const SelectTag: React.ForwardRefRenderFunction<HTMLInputElement, SelectTagProps
           langs={langs}
           search={search}
           rhfError={rhfError}
+          disabled={controlDisabled}
           inputClassName={inputClassName}
           inputStyle={inputStyle}
           placeholder={placeholder}

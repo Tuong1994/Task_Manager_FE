@@ -3,8 +3,8 @@
 import React from "react";
 import { FaTimesCircle } from "react-icons/fa";
 import { useFormContext } from "react-hook-form";
-import useLangs from "@/hooks/useLangs";
 import FormItemContext from "../Form/Context";
+import useLangs from "@/hooks/useLangs";
 
 export interface TextAreaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   rootClassName?: string;
@@ -40,9 +40,12 @@ const textarea: React.ForwardRefRenderFunction<HTMLTextAreaElement, TextAreaProp
 ) => {
   const rhfMethods = useFormContext();
 
-  const { isRhf, rhfName, rhfValue, rhfError, rhfOnChange, rhfOnBlur } = React.useContext(FormItemContext);
+  const { isRhf, rhfName, rhfValue, rhfError, rhfDisabled, rhfOnChange, rhfOnBlur } =
+    React.useContext(FormItemContext);
 
   const { langs } = useLangs();
+
+  const controlDisabled = rhfDisabled ? rhfDisabled : disabled;
 
   const sizeClassName = `textarea-${sizes}`;
 
@@ -50,7 +53,7 @@ const textarea: React.ForwardRefRenderFunction<HTMLTextAreaElement, TextAreaProp
 
   const errorClassName = rhfError ? "textarea-group-error" : "";
 
-  const disabledClassName = disabled ? "textarea-group-disabled" : "";
+  const disabledClassName = controlDisabled ? "textarea-group-disabled" : "";
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => onChangeInput?.(e.target.value);
 
@@ -88,12 +91,15 @@ const textarea: React.ForwardRefRenderFunction<HTMLTextAreaElement, TextAreaProp
         </label>
       )}
 
-      <div style={inputStyle} className={`textarea-group ${inputClassName} ${errorClassName} ${disabledClassName}`}>
+      <div
+        style={inputStyle}
+        className={`textarea-group ${inputClassName} ${errorClassName} ${disabledClassName}`}
+      >
         <textarea
           {...restProps}
           ref={ref}
           rows={rows}
-          disabled={disabled}
+          disabled={controlDisabled}
           id="textarea"
           className="group-control"
           placeholder={`${placeholder ?? langs?.common.form.placeholder.type}...`}

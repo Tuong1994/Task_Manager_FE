@@ -43,9 +43,12 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
 ) => {
   const rhfMethods = useFormContext();
 
-  const { isRhf, rhfName, rhfValue, rhfError, rhfOnChange, rhfOnBlur } = React.useContext(FormItemContext);
+  const { isRhf, rhfName, rhfValue, rhfError, rhfDisabled, rhfOnChange, rhfOnBlur } =
+    React.useContext(FormItemContext);
 
   const { langs } = useLangs();
+
+  const controlDisabled = rhfDisabled ? rhfDisabled : disabled;
 
   const sizeClassName = `input-${sizes}`;
 
@@ -53,7 +56,7 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
 
   const errorClassName = rhfError ? "input-group-error" : "";
 
-  const disabledClassName = disabled ? "input-group-disabled" : "";
+  const disabledClassName = controlDisabled ? "input-group-disabled" : "";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => onChangeInput?.(e.target.value);
 
@@ -101,7 +104,7 @@ const Input: React.ForwardRefRenderFunction<HTMLInputElement, InputProps> = (
           <input
             {...restProps}
             ref={ref}
-            disabled={disabled}
+            disabled={controlDisabled}
             id="input"
             type="text"
             className="control-input"

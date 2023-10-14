@@ -3,7 +3,6 @@
 import React from "react";
 import { FaEye, FaEyeSlash, FaTimesCircle } from "react-icons/fa";
 import { useFormContext } from "react-hook-form";
-import NoteMessage from "@/components/UI/NoteMessage";
 import FormItemContext from "../Form/Context";
 import useLangs from "@/hooks/useLangs";
 
@@ -44,11 +43,14 @@ const InputPassword: React.ForwardRefRenderFunction<HTMLInputElement, InputPassw
 ) => {
   const rhfMethods = useFormContext();
 
-  const { isRhf, rhfName, rhfValue, rhfError, rhfOnChange, rhfOnBlur } = React.useContext(FormItemContext);
+  const { isRhf, rhfName, rhfValue, rhfError, rhfDisabled, rhfOnChange, rhfOnBlur } =
+    React.useContext(FormItemContext);
 
   const { langs } = useLangs();
 
   const [showPassword, setShowPassword] = React.useState<boolean>(false);
+
+  const controlDisabled = rhfDisabled ? rhfDisabled : disabled;
 
   const sizeClassName = `input-${sizes}`;
 
@@ -56,7 +58,7 @@ const InputPassword: React.ForwardRefRenderFunction<HTMLInputElement, InputPassw
 
   const errorClassName = rhfError ? "input-group-error" : "";
 
-  const disabledClassName = disabled ? "input-group-disabled" : "";
+  const disabledClassName = controlDisabled ? "input-group-disabled" : "";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => onChangeInput?.(e.target.value);
 
@@ -104,7 +106,7 @@ const InputPassword: React.ForwardRefRenderFunction<HTMLInputElement, InputPassw
           <input
             {...restProps}
             ref={ref}
-            disabled={disabled}
+            disabled={controlDisabled}
             id="password"
             className="control-input"
             type={!showPassword ? "password" : "text"}

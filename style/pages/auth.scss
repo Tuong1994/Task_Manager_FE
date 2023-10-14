@@ -1,0 +1,45 @@
+.auth {
+  width: $w-full;
+  height: $h-screen;
+  background: $bg-slate;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all $transition-duration-md $transition-fn;
+  .auth-inner {
+    .inner-logo {
+      width: calc($w-1 * 30);
+      height: calc($h-1 * 5);
+      object-fit: contain;
+      @include respond(mdPhone) {
+        width: calc($w-1 * 25);
+      }
+    }
+    .inner-content-title {
+      font-weight: $font-medium;
+    }
+    .inner-form {
+      .form-title {
+        color: $text-primary;
+      }
+      .form-action {
+        width: $w-full;
+      }
+    }
+    @include respond(smTablet) {
+      padding-top: calc($h-1 * 5);
+    }
+  }
+  @include respond(smTablet) {
+    height: auto;
+  }
+}
+
+.auth-dark {
+  background: $bg-black;
+  .inner-icon {
+    path {
+      color: $text-white;
+    }
+  }
+}

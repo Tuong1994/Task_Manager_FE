@@ -3,10 +3,10 @@
 import React from "react";
 import { FaAngleLeft } from "react-icons/fa";
 import { usePathname } from "next/navigation";
-import Tooltip from "../../Tooltip";
+import Tooltip from "@/components/UI/Tooltip";
+import Space from "@/components/UI/Space";
 import Link from "next/link";
-import Space from "../../Space";
-import useMenu from "../useMenu";
+import useMenu from "@/hooks/useMenu";
 import useTheme from "@/hooks/useTheme";
 
 interface SideProps {}
@@ -16,11 +16,11 @@ const Side: React.ForwardRefRenderFunction<HTMLDivElement, SideProps> = ({}, ref
 
   const pathname = usePathname();
 
-  const themeClassName = useTheme("layout-side");
+  const themeClassName = useTheme("container-side");
 
   const [collapse, setCollapse] = React.useState<boolean>(false);
 
-  const collpaseClassName = collapse ? "layout-side-collapse" : "";
+  const collpaseClassName = collapse ? "container-side-collapse" : "";
 
   const collapseLabelClassName = collapse ? "inner-label-hide" : "";
 
@@ -29,7 +29,7 @@ const Side: React.ForwardRefRenderFunction<HTMLDivElement, SideProps> = ({}, ref
   const routeActiveClassName = (path: string) => {
     const urlSplit = pathname.split("/");
 
-    const currentPathSplit = path.split("/")
+    const currentPathSplit = path.split("/");
 
     if (urlSplit[1] === currentPathSplit[1]) return "menu-item-active";
 
@@ -39,7 +39,7 @@ const Side: React.ForwardRefRenderFunction<HTMLDivElement, SideProps> = ({}, ref
   const handleCollapse = () => setCollapse(!collapse);
 
   return (
-    <div ref={ref} className={`layout-side ${themeClassName} ${collpaseClassName}`}>
+    <div ref={ref} className={`container-side ${themeClassName} ${collpaseClassName}`}>
       <div className="side-menu">
         {menus.map((menu) => (
           <Tooltip

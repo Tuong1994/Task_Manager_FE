@@ -23,6 +23,7 @@ export interface SelectProps extends React.InputHTMLAttributes<HTMLInputElement>
   options?: SelectOption[];
   async?: boolean;
   loading?: boolean;
+  disabled?: boolean;
   total?: number;
   limit?: number;
   prefixes?: React.ReactNode | React.ReactNode[];
@@ -46,6 +47,7 @@ const Select: React.ForwardRefRenderFunction<HTMLInputElement, SelectProps> = (
     options = [],
     async = false,
     loading = false,
+    disabled,
     total = 100,
     limit = 10,
     value,
@@ -58,11 +60,13 @@ const Select: React.ForwardRefRenderFunction<HTMLInputElement, SelectProps> = (
 ) => {
   const rhfMethods = useFormContext();
 
-  const { isRhf, rhfName, rhfValue, rhfError } = React.useContext(FormItemContext);
+  const { isRhf, rhfName, rhfValue, rhfError, rhfDisabled } = React.useContext(FormItemContext);
 
   const { langs } = useLangs();
 
   const totalPages = Math.ceil(total / limit);
+
+  const controlDisabled = rhfDisabled ? rhfDisabled : disabled;
 
   const sizeClassName = `select-${sizes}`;
 
@@ -176,6 +180,7 @@ const Select: React.ForwardRefRenderFunction<HTMLInputElement, SelectProps> = (
           open={open}
           langs={langs}
           rhfError={rhfError}
+          disabled={controlDisabled}
           inputClassName={inputClassName}
           inputStyle={inputStyle}
           placeholder={placeholder}

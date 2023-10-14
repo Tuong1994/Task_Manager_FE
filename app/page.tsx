@@ -3,9 +3,9 @@
 import React from "react";
 import { NextPage } from "next";
 import { UI } from "@/components";
-import Statistics from "@/features/dashboard/Statistics";
-import Chart from "@/features/dashboard/Chart";
-import PriorityTask from "@/features/dashboard/PriorityTask";
+import Statistics from "@/features/main/dashboard/Statistics";
+import Chart from "@/features/main/dashboard/Chart";
+import PriorityTask from "@/features/main/dashboard/PriorityTask";
 import useLangs from "@/hooks/useLangs";
 
 const { ContentHeader, Grid } = UI;

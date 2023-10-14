@@ -1,6 +1,6 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
-import Space from "../../Space";
+import Space from "../Space";
 
 interface MenuButtonProps extends React.HTMLAttributes<HTMLButtonElement> {}
 

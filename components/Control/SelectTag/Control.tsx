@@ -11,6 +11,7 @@ interface SelectTagControlProps extends React.InputHTMLAttributes<HTMLInputEleme
   inputClassName?: string;
   inputStyle?: React.CSSProperties;
   prefixes?: React.ReactNode | React.ReactNode[];
+  disabled?: boolean;
   handleOpen: () => void;
   handleClearInput: () => void;
 }

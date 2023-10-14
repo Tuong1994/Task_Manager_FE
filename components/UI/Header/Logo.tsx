@@ -7,7 +7,7 @@ interface LogoProps {}
 const Logo: React.FC<LogoProps> = () => {
   return (
     <Link href="/">
-      <Image width={150} alt="logo" src={require("../../../../public/logo.png")} />
+      <Image width={150} alt="logo" src={require("../../../public/logo.png")} />
     </Link>
   );
 };

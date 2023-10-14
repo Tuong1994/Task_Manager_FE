@@ -5,11 +5,11 @@ import { FaCalendar, FaTimesCircle } from "react-icons/fa";
 interface DatePickerControlProps {
   inputStyle?: React.CSSProperties;
   inputClassName?: string;
-  disabledClassName: string;
   prefixes?: React.ReactNode | React.ReactNode[];
   selectedDate: Date;
   format: string;
   rhfError: boolean;
+  disabled?: boolean;
   handleOpen: () => void;
   handleClearInput: () => void;
 }
@@ -19,16 +19,18 @@ const DatePickerControl: React.ForwardRefRenderFunction<HTMLDivElement, DatePick
     inputStyle,
     inputClassName = "",
     prefixes,
-    disabledClassName,
     selectedDate,
     format,
     rhfError,
+    disabled,
     handleOpen,
     handleClearInput,
   },
   ref
 ) => {
   const errorClassName = rhfError ? "wrap-group-error" : "";
+
+  const disabledClassName = disabled ? "wrap-group-disabled" : "";
 
   const date = new Date(selectedDate.getFullYear(), selectedDate.getMonth(), selectedDate.getDate())
 

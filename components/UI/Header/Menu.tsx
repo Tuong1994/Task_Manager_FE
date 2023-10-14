@@ -1,10 +1,10 @@
 import React from "react";
-import Drawer from "../../Drawer";
-import Space from "../../Space";
+import Drawer from "../Drawer";
+import Space from "../Space";
 import ThemeButton from "./ThemeButton";
 import Profile from "./Profile";
 import Translate from "./Translate";
-import useMenu from "../useMenu";
+import useMenu from "@/hooks/useMenu";
 import useTheme from "@/hooks/useTheme";
 import useViewpoint from "@/hooks/useViewpoint";
 
