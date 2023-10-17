@@ -1,5 +1,6 @@
 import * as Grid from "./Grid";
 import * as Typography from "./Typography";
+import Image from "./Image";
 import NoteMessage from "./NoteMessage";
 import Header from "./Header";
 import Badge from "./Badge";
@@ -22,6 +23,7 @@ export {
   Header,
   Button,
   Badge,
+  Image,
   Switch,
   Card,
   Divider,

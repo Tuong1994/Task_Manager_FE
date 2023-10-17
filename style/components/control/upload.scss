@@ -1,0 +1,41 @@
+.upload-single {
+  width: max-content;
+  .single-group {
+    transition: opacity $transition-duration-md $transition-fn;
+    .group-control {
+      display: none;
+    }
+    .group-view {
+      width: calc($w-1 * 10);
+      height: calc($h-1 * 10);
+      border: 0.5px dashed $bg-gray-medium;
+      border-radius: $rounded;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      transition: all $transition-duration-md $transition-fn;
+      path {
+        color: $text-gray-medium;
+        transition: all $transition-duration-md $transition-fn;
+      }
+      &:hover {
+        border-color: $bg-primary;
+        path {
+          color: $text-primary;
+        }
+      }
+    }
+  }
+  .single-group-dragged {
+    opacity: 0.4;
+  }
+  .single-group-error {
+    .group-view {
+      border-color: $bg-red;
+      path {
+        color: $text-red;
+      }
+    }
+  }
+}

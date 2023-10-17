@@ -1,0 +1,114 @@
+.image {
+  width: max-content;
+  position: relative;
+  overflow: hidden;
+  user-select: none;
+  &:hover .image-actions {
+    opacity: 1;
+  }
+  .image-view {
+    border-radius: $rounded;
+  }
+  .image-view-none {
+    object-fit: none;
+  }
+  .image-view-fill {
+    object-fit: fill;
+  }
+  .image-view-cover {
+    object-fit: cover;
+  }
+  .image-view-contain {
+    object-fit: contain;
+  }
+  .image-actions {
+    width: $w-full;
+    height: $h-full;
+    border-radius: $rounded;
+    background: $bg-black-rgba;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    transition: opacity $transition-duration-md $transition-fn;
+    .actions-icon {
+      cursor: pointer;
+      transition: opacity $transition-duration-md $transition-fn;
+      &:hover {
+        opacity: 0.6;
+      }
+      &:nth-child(2) {
+        margin-left: $m-2;
+      }
+      path {
+        color: $text-white;
+      }
+    }
+  }
+}
+
+.image-viewer {
+  width: $w-full;
+  height: $h-screen;
+  background: $bg-black-rgba;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  opacity: 0;
+  transition: all $transition-duration-md $transition-fn;
+  .viewer-header {
+    width: $w-full;
+    height: calc($h-1 * 5);
+    padding: 0 $p-5;
+    background: $bg-black;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    .header-icon {
+      margin-right: $m-2;
+      cursor: pointer;
+      path {
+        color: $text-white;
+      }
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  .viewer-image {
+    width: $w-full;
+    height: calc($h-screen - $h-1 * 5);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .image-item {
+      width: calc($w-1 * 60);
+      height: calc($h-1 * 40);
+      border-radius: $rounded;
+      overflow: hidden;
+      transition: all $transition-duration-md $transition-fn;
+      .item-view {
+        width: $w-full;
+        height: $h-full;
+        object-fit: cover;
+      }
+      @include respond(mdTablet) {
+        width: calc($w-1 * 40);
+      }
+      @include respond(mdPhone) {
+        width: calc($w-1 * 30);
+      }
+    }
+  }
+}
+
+.image-viewer-active {
+  opacity: 1;
+  animation: fade $transition-duration-md $transition-fn 1;
+}

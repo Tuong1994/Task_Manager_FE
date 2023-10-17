@@ -21,7 +21,7 @@ const Profile: React.FC<ProfileProps> = () => {
       label: (
         <Space {...spaceProps}>
           <FaUser />
-          <Link href="/">{langs?.common.components.header.info}</Link>
+          <Link href="/account/1">{langs?.common.components.header.info}</Link>
         </Space>
       ),
     },
@@ -30,7 +30,7 @@ const Profile: React.FC<ProfileProps> = () => {
       label: (
         <Space {...spaceProps}>
           <FaTasks />
-          <Link href="/">{langs?.common.components.header.tasks}</Link>
+          <Link href="/account/task">{langs?.common.components.header.tasks}</Link>
         </Space>
       ),
     },

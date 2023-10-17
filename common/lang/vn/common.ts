@@ -51,6 +51,11 @@ const commonVn = {
     newest: "Mới nhất",
     oldest: "Cũ nhất",
   },
+  message: {
+    error: {
+      upload: "Kích thước tệp phải nhỏ hơn hoặc bằng 2MB và chỉ chấp nhận loại tệp jpg, jpeg, png",
+    },
+  },
 };
 
 export default commonVn;

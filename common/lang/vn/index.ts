@@ -1,3 +1,4 @@
+import accountVn from "./account";
 import authVn from "./auth";
 import commonVn from "./common";
 import dashboardVn from "./dashboard";
@@ -14,6 +15,7 @@ const vn = {
   staff: staffVn,
   task: taskVn,
   auth: authVn,
+  account: accountVn,
 };
 
 export type LangVN = typeof vn;

@@ -1,0 +1,9 @@
+.draggable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  cursor: move;
+  user-select: none;
+  transition: all 0.1s linear;
+}

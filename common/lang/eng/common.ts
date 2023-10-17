@@ -51,6 +51,11 @@ const commonEng = {
     newest: "Newest",
     oldest: "Oldest",
   },
+  message: {
+    error: {
+      upload: "File size must be less than or equal to 2MB and only accept file types jpg, jpeg, png",
+    },
+  },
 };
 
 export default commonEng;

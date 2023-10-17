@@ -1,3 +1,4 @@
+import accountEng from "./account";
 import authEng from "./auth";
 import commonEng from "./common";
 import dashboardEng from "./dashboard";
@@ -14,6 +15,7 @@ const eng = {
   staff: staffEng,
   task: taskEng,
   auth: authEng,
+  account: accountEng,
 };
 
 export type LangENG = typeof eng;

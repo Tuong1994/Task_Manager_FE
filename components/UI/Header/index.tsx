@@ -29,7 +29,7 @@ const Header: React.ForwardRefRenderFunction<HTMLDivElement, HeaderProps> = ({ i
   const handleCloseMenu = () => setOpen(false);
 
   const commonProps: GridColProps = {
-    xs: isAuth ? 8 : 12,
+    xs: isAuth ? 0 : 12,
     md: isAuth ? 8 : 12,
     lg: isAuth ? 8 : 12,
     span: isAuth ? 8 : 12,

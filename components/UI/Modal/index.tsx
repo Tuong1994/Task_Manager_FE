@@ -4,9 +4,9 @@ import React from "react";
 import { useAppSelector } from "@/redux/hooks";
 import { FaTimes } from "react-icons/fa";
 import Button, { ButtonProps } from "../Button";
+import Portal from "@/components/Portal";
 import useRender from "@/hooks/useRender";
 import useOverflow from "@/hooks/useOverflow";
-import Portal from "./Portal";
 
 interface ModalAction extends ButtonProps {
   title?: string;
